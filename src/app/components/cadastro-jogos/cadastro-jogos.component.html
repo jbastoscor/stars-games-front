@@ -1,0 +1,69 @@
+<section class="game-register-section">
+  <div class="game-register-container">
+    <div class="game-register-form-container">
+      <div class="title">
+        <h2>Cadastro de jogos</h2>
+      </div>
+
+      <div class="gameForm-container">
+        <div class="gameName-container">
+          <label for="gameName">Nome do jogo:</label>
+          <input type="text" id="gameName" [(ngModel)]="gameName" placeholder="Digite aqui" />
+        </div>
+
+        <div *ngIf="categories.length" class="gameCategory-container">
+          <label for="gameCategory">Categoria:</label>
+          <select id="gameCategory" [(ngModel)]="gameCategory">
+            <option value="" disabled hidden>Selecione</option>
+            <option *ngFor="let category of categories" [value]="category.category_name">{{ category.category_name }}</option>
+          </select>
+        </div>
+
+        <div class="gameUrl-container">
+          <label for="gameUrl">URL do jogo:</label>
+          <input type="text" id="gameUrl" [(ngModel)]="gameUrl" placeholder="Cole aqui" />
+        </div>
+
+        <div class="gameVideoUrl-container">
+          <label for="gameVideoUrl">URL do vídeo do jogo (opcional):</label>
+          <input type="text" id="gameVideoUrl" [(ngModel)]="gameVideoUrl" placeholder="Cole aqui" />
+        </div>
+
+        <div class="gameImageUrl-container">
+          <label for="gameImageUrl">URL da imagem do jogo:</label>
+          <input type="text" id="gameImageUrl" [(ngModel)]="gameImageUrl" placeholder="Cole aqui" />
+        </div>
+
+        <div class="gameDescription-container">
+          <label for="gameDescription">Descrição do jogo (255 caracteres):</label>
+          <textarea maxLength="255" id="gameDescription" [(ngModel)]="gameDescription" placeholder="Digite aqui"></textarea>
+        </div>
+      </div>
+
+      <div class="registerButton-container">
+        <button (click)="validateInputs()">Cadastrar</button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="modalOpen" class="messageModal-container">
+    <div class="messageModal-content">
+      <div class="title">
+        <p>Atenção!</p>
+      </div>
+
+      <div class="message">
+        <div class="contentGame-container">
+          <p class="topic">Mensagem:</p>
+          <p class="content">{{ modalMessage }}</p>
+        </div>
+      </div>
+
+      <div class="buttons-container">
+        <button class="closeButton" (click)="closeModal()">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <app-loader *ngIf="isLoaderOpen"></app-loader>
+</section>

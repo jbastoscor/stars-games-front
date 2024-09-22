@@ -1,0 +1,62 @@
+<section class="game-delete-section">
+  <div class="game-delete-container">
+    <div class="game-delete-form-container">
+      <div class="title">
+        <h2>Exclusão de jogos</h2>
+      </div>
+
+      <div class="gameForm-container">
+        <div class="gameName-container">
+          <label for="gameName">Nome do jogo:</label>
+          <input type="text" id="gameName" placeholder="Digite aqui" [(ngModel)]="game_name" />
+        </div>
+      </div>
+
+      <div class="deleteButton-container">
+        <button (click)="validateInput()">Excluir</button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="game_delete_modal" class="deleteModal-container">
+    <div class="deleteModal-content">
+      <div class="title">
+        <p>Realmente deseja excluir esse jogo:</p>
+      </div>
+      <div class="message">
+        <div *ngFor="let field of ['game_name', 'game_category', 'game_url', 'game_video_url', 'game_image_url', 'game_description']">
+          <div class="contentGame-container">
+            <p class="topic">{{ field === 'game_name' ? 'Nome do jogo' : (field === 'game_category' ? 'Categoria' : (field === 'game_url' ? 'URL do jogo' : (field === 'game_video_url' ? 'URL do vídeo do jogo' : (field === 'game_image_url' ? 'URL da imagem do jogo' : 'Descrição do jogo')))) }}:</p>
+            <p class="content">{{ field === 'game_name' ? game_name : (field === 'game_category' ? game_category : (field === 'game_url' ? game_url : (field === 'game_video_url' ? game_video_url : (field === 'game_image_url' ? game_image_url : game_description)))) }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="buttons-container">
+        <button class="cancelButton" (click)="closeDeleteModal()">Cancelar</button>
+        <button class="deleteButton" (click)="deleteGame()">Excluir</button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="message_modal_open" class="messageModal-container">
+    <div class="messageModal-content">
+      <div class="title">
+        <p>Atenção!</p>
+      </div>
+
+      <div class="message">
+        <div class="contentGame-container">
+          <p class="topic">Mensagem:</p>
+          <p class="content">{{ modal_message }}</p>
+        </div>
+      </div>
+
+      <div class="buttons-container">
+        <button class="closeButton" (click)="closeMessageModal()">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <app-loader *ngIf="loaderOpen"></app-loader>
+</section>
