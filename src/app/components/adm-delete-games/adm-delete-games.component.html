@@ -8,7 +8,7 @@
       <div class="gameForm-container">
         <div class="gameName-container">
           <label for="gameName">Nome do jogo:</label>
-          <input type="text" id="gameName" placeholder="Digite aqui" [(ngModel)]="game_name" />
+          <input type="text" id="gameName" name="gameName" placeholder="Digite aqui" [(ngModel)]="game_name" />
         </div>
       </div>
 
@@ -23,12 +23,36 @@
       <div class="title">
         <p>Realmente deseja excluir esse jogo:</p>
       </div>
+
       <div class="message">
-        <div *ngFor="let field of ['game_name', 'game_category', 'game_url', 'game_video_url', 'game_image_url', 'game_description']">
-          <div class="contentGame-container">
-            <p class="topic">{{ field === 'game_name' ? 'Nome do jogo' : (field === 'game_category' ? 'Categoria' : (field === 'game_url' ? 'URL do jogo' : (field === 'game_video_url' ? 'URL do vídeo do jogo' : (field === 'game_image_url' ? 'URL da imagem do jogo' : 'Descrição do jogo')))) }}:</p>
-            <p class="content">{{ field === 'game_name' ? game_name : (field === 'game_category' ? game_category : (field === 'game_url' ? game_url : (field === 'game_video_url' ? game_video_url : (field === 'game_image_url' ? game_image_url : game_description)))) }}</p>
-          </div>
+        <div class="contentGame-container">
+          <p class="topic">Nome do jogo:</p>
+          <p class="content">{{ game_name }}</p>
+        </div>
+
+        <div class="contentGame-container">
+          <p class="topic">Categoria do jogo:</p>
+          <p class="content">{{ game_category }}</p>
+        </div>
+
+        <div class="contentGame-container">
+          <p class="topic">URL do jogo:</p>
+          <p class="content">{{ game_url }}</p>
+        </div>
+
+        <div class="contentGame-container">
+          <p class="topic">URL do vídeo do jogo:</p>
+          <p class="content">{{ game_video_url }}</p>
+        </div>
+
+        <div class="contentGame-container">
+          <p class="topic">URL da imagem do jogo:</p>
+          <p class="content">{{ game_image_url }}</p>
+        </div>
+
+        <div class="contentGame-container">
+          <p class="topic">Descrição do jogo:</p>
+          <p class="content">{{ game_description }}</p>
         </div>
       </div>
 
@@ -58,5 +82,5 @@
     </div>
   </div>
 
-  <app-loader *ngIf="loaderOpen"></app-loader>
+  <app-loader *ngIf="loader_open"></app-loader>
 </section>

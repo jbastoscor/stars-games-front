@@ -1,0 +1,275 @@
+.game-delete-section {
+  width: 100%;
+
+  .game-delete-container {
+    display: flex;
+    flex-direction: column;
+    margin: 35px 15px 15px 15px;
+    padding: 20px 10px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    background-color: #e52521;
+
+    @media screen and (min-width: 1050px) {
+      max-width: 1024px;
+      width: 100%;
+      margin: 15px auto;
+    }
+
+    @media screen and (min-width: 1600px) {
+      max-width: 1550px;
+    }
+
+    .game-delete-form-container {
+      @media screen and (min-width: 1600px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 1024px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .title {
+        margin-bottom: 20px;
+
+        h2 {
+          font-family: "Josefin Sans", sans-serif;
+          font-size: 20px;
+          text-align: center;
+          text-transform: uppercase;
+
+          @media screen and (min-width: 768px) {
+            font-size: 24px;
+          }
+        }
+      }
+
+      .gameForm-container {
+        @media screen and (min-width: 1600px) {
+          width: 100%;
+        }
+
+        .gameName-container {
+          margin-bottom: 20px;
+
+          label {
+            font-family: "Josefin Sans", sans-serif;
+            font-size: 14px;
+          }
+
+          input {
+            font-family: "Josefin Sans", sans-serif;
+            font-size: 14px;
+            height: 30px;
+            width: 100%;
+            padding: 6px 6px 3px 5px;
+            border: 1px solid #282828;
+            border-radius: 5px;
+            outline-color: #000;
+          }
+        }
+      }
+
+      .deleteButton-container {
+        display: flex;
+        justify-content: center;
+
+        button {
+          font-family: "Josefin Sans", sans-serif;
+          font-size: 14px;
+          text-transform: uppercase;
+          color: #fff;
+          width: 150px;
+          height: 30px;
+          padding-top: 5px;
+          background-color: #049cd8;
+          border: 1px solid #fff;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .deleteModal-container {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .deleteModal-content {
+      position: absolute;
+      width: calc(100% - 30px);
+      height: auto;
+      background-color: #43b047;
+      border: 1px solid rgba(0, 0, 0, 0.6);
+      border-radius: 5px;
+      margin: 15px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+
+      @media screen and (min-width: 1050px) {
+        width: 1024px;
+      }
+
+      .title {
+        margin-bottom: 20px;
+
+        p {
+          font-family: "Josefin Sans", sans-serif;
+          font-size: 20px;
+          font-weight: 700;
+          text-align: center;
+          text-transform: uppercase;
+        }
+      }
+
+      .message {
+        margin-bottom: 15px;
+
+        .contentGame-container {
+          margin-bottom: 15px;
+          padding: 5px;
+          border: 1px solid #000;
+          border-radius: 5px;
+
+          .topic {
+            font-family: "Josefin Sans", sans-serif;
+            margin-bottom: 5px;
+          }
+
+          .content {
+            font-family: "Josefin Sans", sans-serif;
+            font-weight: 700;
+            word-wrap: break-word;
+          }
+        }
+      }
+
+      .buttons-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .cancelButton {
+          font-family: "Josefin Sans", sans-serif;
+          font-size: 14px;
+          text-transform: uppercase;
+          color: #fff;
+          width: 115px;
+          height: 30px;
+          padding-top: 5px;
+          margin: 0 15px 0 0;
+          background-color: #049cd8;
+          border: 1px solid #fff;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+
+        .deleteButton {
+          font-family: "Josefin Sans", sans-serif;
+          font-size: 14px;
+          text-transform: uppercase;
+          color: #fff;
+          width: 115px;
+          height: 30px;
+          padding-top: 5px;
+          margin: 0;
+          background-color: #049cd8;
+          border: 1px solid #fff;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .messageModal-container {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .messageModal-content {
+      position: absolute;
+      width: calc(100% - 30px);
+      height: auto;
+      background-color: #43b047;
+      border: 1px solid rgba(0, 0, 0, 0.6);
+      border-radius: 5px;
+      margin: 15px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+
+      @media screen and (min-width: 1050px) {
+        width: 1024px;
+      }
+
+      .title {
+        margin-bottom: 20px;
+
+        p {
+          font-family: "Josefin Sans", sans-serif;
+          font-size: 20px;
+          font-weight: 700;
+          text-align: center;
+          text-transform: uppercase;
+        }
+      }
+
+      .message {
+        margin-bottom: 15px;
+
+        .contentGame-container {
+          margin-bottom: 15px;
+          padding: 5px;
+          border: 1px solid #000;
+          border-radius: 5px;
+
+          .topic {
+            font-family: "Josefin Sans", sans-serif;
+            margin-bottom: 5px;
+          }
+
+          .content {
+            font-family: "Josefin Sans", sans-serif;
+            font-weight: 700;
+            word-wrap: break-word;
+          }
+        }
+      }
+
+      .buttons-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .closeButton {
+          font-family: "Josefin Sans", sans-serif;
+          font-size: 14px;
+          text-transform: uppercase;
+          color: #fff;
+          width: 150px;
+          height: 30px;
+          padding-top: 5px;
+          margin: 0;
+          background-color: #049cd8;
+          border: 1px solid #fff;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

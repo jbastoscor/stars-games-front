@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ExcluirJogosComponent } from './excluir-jogos.component';
+import { AdmDeleteGamesComponent } from './adm-delete-games.component';
 
-describe('ExcluirJogosComponent', () => {
-  let component: ExcluirJogosComponent;
-  let fixture: ComponentFixture<ExcluirJogosComponent>;
+describe('AdmDeleteGamesComponent', () => {
+  let component: AdmDeleteGamesComponent;
+  let fixture: ComponentFixture<AdmDeleteGamesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ExcluirJogosComponent ]
+      declarations: [ AdmDeleteGamesComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ExcluirJogosComponent);
+    fixture = TestBed.createComponent(AdmDeleteGamesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -8,35 +8,35 @@
       <div class="gameForm-container">
         <div class="gameName-container">
           <label for="gameName">Nome do jogo:</label>
-          <input type="text" id="gameName" [(ngModel)]="gameName" placeholder="Digite aqui" />
+          <input type="text" id="gameName" name="gameName" placeholder="Digite aqui" [(ngModel)]="game_name" />
         </div>
 
-        <div *ngIf="categories.length" class="gameCategory-container">
+        <div *ngIf="categories" class="gameCategory-container">
           <label for="gameCategory">Categoria:</label>
-          <select id="gameCategory" [(ngModel)]="gameCategory">
+          <select id="gameCategory" name="gameCategory" [(ngModel)]="game_category">
             <option value="" disabled hidden>Selecione</option>
-            <option *ngFor="let category of categories" [value]="category.category_name">{{ category.category_name }}</option>
+            <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
           </select>
         </div>
 
         <div class="gameUrl-container">
           <label for="gameUrl">URL do jogo:</label>
-          <input type="text" id="gameUrl" [(ngModel)]="gameUrl" placeholder="Cole aqui" />
+          <input type="text" id="gameUrl" name="gameUrl" placeholder="Cole aqui" [(ngModel)]="game_url" />
         </div>
 
         <div class="gameVideoUrl-container">
           <label for="gameVideoUrl">URL do vídeo do jogo (opcional):</label>
-          <input type="text" id="gameVideoUrl" [(ngModel)]="gameVideoUrl" placeholder="Cole aqui" />
+          <input type="text" id="gameVideoUrl" name="gameVideoUrl" placeholder="Cole aqui" [(ngModel)]="game_video_url" />
         </div>
 
         <div class="gameImageUrl-container">
           <label for="gameImageUrl">URL da imagem do jogo:</label>
-          <input type="text" id="gameImageUrl" [(ngModel)]="gameImageUrl" placeholder="Cole aqui" />
+          <input type="text" id="gameImageUrl" name="gameImageUrl" placeholder="Cole aqui" [(ngModel)]="game_image_url" />
         </div>
 
         <div class="gameDescription-container">
-          <label for="gameDescription">Descrição do jogo (255 caracteres):</label>
-          <textarea maxLength="255" id="gameDescription" [(ngModel)]="gameDescription" placeholder="Digite aqui"></textarea>
+          <label for="gameDescription">Descrição do jogo (255 caracteres): </label>
+          <textarea maxlength="255" id="gameDescription" name="gameDescription" placeholder="Digite aqui" [(ngModel)]="game_description"></textarea>
         </div>
       </div>
 
@@ -46,7 +46,7 @@
     </div>
   </div>
 
-  <div *ngIf="modalOpen" class="messageModal-container">
+  <div *ngIf="modal_open" class="messageModal-container">
     <div class="messageModal-content">
       <div class="title">
         <p>Atenção!</p>
@@ -55,7 +55,7 @@
       <div class="message">
         <div class="contentGame-container">
           <p class="topic">Mensagem:</p>
-          <p class="content">{{ modalMessage }}</p>
+          <p class="content">{{ modal_message }}</p>
         </div>
       </div>
 
@@ -65,5 +65,5 @@
     </div>
   </div>
 
-  <app-loader *ngIf="isLoaderOpen"></app-loader>
+  <app-loader *ngIf="is_loader_open"></app-loader>
 </section>

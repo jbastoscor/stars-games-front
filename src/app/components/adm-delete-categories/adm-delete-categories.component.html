@@ -1,0 +1,61 @@
+<section class="adm-categories-section">
+  <div class="category-delete-container">
+    <div class="category-delete-form-container">
+      <div class="title">
+        <h2>Exclusão de categorias</h2>
+      </div>
+
+      <div class="categoryForm-container">
+        <div class="categoryName-container">
+          <label for="categoryName">Nome da categoria:</label>
+          <input type="text" id="categoryName" name="categoryName" placeholder="Digite aqui" [(ngModel)]="category_name" />
+        </div>
+      </div>
+
+      <div class="deleteButton-container">
+        <button (click)="validateInput()">Excluir</button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="category_delete_modal" class="deleteModal-container">
+    <div class="deleteModal-content">
+      <div class="title">
+        <p>Realmente deseja excluir essa categoria:</p>
+      </div>
+
+      <div class="message">
+        <div class="contentCategory-container">
+          <p class="topic">Nome da categoria:</p>
+          <p class="content">{{ category_name }}</p>
+        </div>
+      </div>
+
+      <div class="buttons-container">
+        <button class="cancelButton" (click)="closeDeleteModal()">Cancelar</button>
+        <button class="deleteButton" (click)="deleteCategory()">Excluir</button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="message_modal_open" class="messageModal-container">
+    <div class="messageModal-content">
+      <div class="title">
+        <p>Atenção!</p>
+      </div>
+
+      <div class="message">
+        <div class="contentCategory-container">
+          <p class="topic">Mensagem:</p>
+          <p class="content">{{ modal_message }}</p>
+        </div>
+      </div>
+
+      <div class="buttons-container">
+        <button class="closeButton" (click)="closeMessageModal()">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <app-loader *ngIf="loader_open"></app-loader>
+</section>

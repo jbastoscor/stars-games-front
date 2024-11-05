@@ -1,14 +1,14 @@
-.game-register-section {
+.category-register-section {
   width: 100%;
 
-  .game-register-container {
+  .category-register-container {
     display: flex;
     flex-direction: column;
     margin: 35px 15px 15px 15px;
     padding: 20px 10px;
     border: 1px solid rgba(0, 0, 0, 0.4);
     border-radius: 5px;
-    background-color: #a421d3;
+    background-color: #e52521;
 
     @media screen and (min-width: 1050px) {
       max-width: 1024px;
@@ -20,7 +20,7 @@
       max-width: 1550px;
     }
 
-    .game-register-form-container {
+    .category-register-form-container {
       @media screen and (min-width: 1600px) {
         display: flex;
         flex-direction: column;
@@ -45,12 +45,12 @@
         }
       }
 
-      .gameForm-container {
+      .categoryForm-container {
         @media screen and (min-width: 1600px) {
           width: 100%;
         }
 
-        .gameName-container {
+        .categoryName-container {
           margin-bottom: 20px;
 
           label {
@@ -70,7 +70,47 @@
           }
         }
 
-        .gameCategory-container {
+        .categoryLogo-container {
+          margin-bottom: 20px;
+
+          label {
+            font-family: "Josefin Sans", sans-serif;
+            font-size: 14px;
+          }
+
+          input {
+            font-family: "Josefin Sans", sans-serif;
+            font-size: 14px;
+            height: 30px;
+            width: 100%;
+            padding: 6px 6px 3px 5px;
+            border: 1px solid #282828;
+            border-radius: 5px;
+            outline-color: #000;
+          }
+        }
+
+        .categoryImage-container {
+          margin-bottom: 20px;
+
+          label {
+            font-family: "Josefin Sans", sans-serif;
+            font-size: 14px;
+          }
+
+          input {
+            font-family: "Josefin Sans", sans-serif;
+            font-size: 14px;
+            height: 30px;
+            width: 100%;
+            padding: 6px 6px 3px 5px;
+            border: 1px solid #282828;
+            border-radius: 5px;
+            outline-color: #000;
+          }
+        }
+
+        .categoryCategory-container {
           display: flex;
           flex-direction: column;
           margin-bottom: 20px;
@@ -94,7 +134,7 @@
           }
         }
 
-        .gameUrl-container {
+        .categoryUrl-container {
           margin-bottom: 20px;
 
           label {
@@ -114,7 +154,7 @@
           }
         }
 
-        .gameVideoUrl-container {
+        .categoryVideoUrl-container {
           margin-bottom: 20px;
 
           label {
@@ -134,7 +174,7 @@
           }
         }
 
-        .gameImageUrl-container {
+        .categoryImageUrl-container {
           margin-bottom: 20px;
 
           label {
@@ -154,7 +194,7 @@
           }
         }
 
-        .gameDescription-container {
+        .categoryDescription-container {
           margin-bottom: 20px;
 
           label {
@@ -210,7 +250,7 @@
       position: absolute;
       width: calc(100% - 30px);
       height: auto;
-      background-color: #ffffff;
+      background-color: #43b047;
       border: 1px solid rgba(0, 0, 0, 0.6);
       border-radius: 5px;
       margin: 15px;
@@ -237,7 +277,7 @@
       .message {
         margin-bottom: 15px;
 
-        .contentGame-container {
+        .contentcategory-container {
           margin-bottom: 15px;
           padding: 5px;
           border: 1px solid #000;
