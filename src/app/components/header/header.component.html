@@ -1,0 +1,79 @@
+<section class="header-section">
+  <div class="header-container">
+    <div class="main-module-container">
+      <a href="/" class="logo-container">
+        <img src="http://stars-games.s3-website-sa-east-1.amazonaws.com/assets/disney-wish-star.png" alt="Logo bowser" />
+        <div class="name-container">
+          <p>Stars</p>
+          <p>Games</p>
+        </div>
+      </a>
+
+      <div class="search-container">
+        <input class="search-container-input" type="text" placeholder="Busque aqui" [(ngModel)]="game_name" (input)="searchGame($event)" />
+        <svg class="search-container-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M21 21L16.65 16.65" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+
+        <ul *ngIf="is_modal_search_open && found_games" class="search-container-results-desk">
+          <ng-container *ngFor="let game of found_games; let i = index">
+            <li *ngIf="i <= 4" class="search-container-results-desk-game" (click)="navigationToGame(game)">
+              <img class="search-container-results-desk-game-img" [src]="game.game_image_url" />
+              <div>
+                <p class="search-container-results-desk-game-title">{{ game.game_name }}</p>
+                <p class="search-container-results-desk-game-description">
+                  {{ window_width >= 1600 ? (game.game_description.length > 200 ? game.game_description.substring(0, 200) : game.game_description) : (game.game_description.length > 100 ? game.game_description.substring(0, 100) : game.game_description) }}...
+                </p>
+              </div>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+
+      <div class="category-profile-container">
+        <div class="category" (click)="navigateToCategories()">
+          <span class="material-symbols-outlined" style="font-size: 50px;">category</span>
+        </div>
+
+        <div class="profile" (click)="handleProfile()">
+          <span *ngIf="!is_logged" class="material-symbols-outlined" style="font-size: 50px;">login</span>
+          <span *ngIf="is_logged" class="material-symbols-outlined" style="font-size: 50px;">account_circle</span>
+        </div>
+
+        <div *ngIf="is_modal_profile_open" class="modal-profile">
+          <div *ngIf="!is_logged">
+            <button (click)="navigateToLogin()">Login</button>
+            <button (click)="navigateToLogin()">Cadastro</button>
+          </div>
+          <div *ngIf="is_logged">
+            <p>Olá, <strong>{{ user_name }}</strong>!</p>
+            <button (click)="navigateToProfile()">Minha conta</button>
+            <button (click)="handleLogoff()">Sair</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-search-container">
+      <input type="text" placeholder="Busque aqui" [(ngModel)]="game_name" (input)="searchGame($event)" />
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M21 21L16.65 16.65" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+
+    </div>
+
+    <ul *ngIf="window_width < 768 && is_modal_search_open && found_games" class="seacrh-results-mobile">
+      <ng-container *ngFor="let game of found_games; let i = index">
+        <li *ngIf="i <= 4" class="seacrh-results-mobile-game" (click)="navigationToGame(game)">
+          <img class="seacrh-results-mobile-game-img" [src]="game.game_image_url" />
+          <div>
+            <p class="seacrh-results-mobile-game-title">{{ game.game_name }}</p>
+            <p class="seacrh-results-mobile-game-description">{{ game.game_description.length > 100 ? game.game_description.substring(0, 100) : game.game_description }}...</p>
+          </div>
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+</section>
