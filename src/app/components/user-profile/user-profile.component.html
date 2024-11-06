@@ -1,0 +1,122 @@
+<section class="userProfile-section">
+  <div class="userProfile-container">
+    <div class="userProfile-container-intro">
+      <h1>Meus dados</h1>
+    </div>
+
+    <div *ngIf="!is_update_password" class="userProfile-container-form">
+      <div class="userProfile-container-form-container">
+        <div class="userProfile-container-form-container-fullName">
+          <label for="fullName">Nome completo:</label>
+          <input disabled type="text" id="fullName" name="fullName" placeholder="Ex: Antonio Jose" maxlength="100" [(ngModel)]="user_full_name" />
+        </div>
+
+        <div class="userProfile-container-form-container-username">
+          <label for="userUsername">Username:</label>
+          <input disabled type="text" id="userUsername" name="userUsername" placeholder="5 caracteres no mínimo" maxlength="50" [(ngModel)]="user_username" />
+        </div>
+
+        <div class="userProfile-container-form-container-birthday">
+          <label for="birthday">Data de nascimento:</label>
+          <input disabled type="text" id="birthday" name="birthday" placeholder="Ex: 27/07/1999" maxlength="10" [(ngModel)]="user_birthday" (input)="formatBirthday($event)" />
+        </div>
+
+        <div class="userProfile-container-form-container-country">
+          <label for="country">País:</label>
+          <input disabled type="text" id="country" name="country" placeholder="Ex: Brasil" maxlength="50" [(ngModel)]="user_country" />
+        </div>
+
+        <div class="userProfile-container-form-container-state">
+          <label for="state">Estado:</label>
+          <input disabled type="text" id="state" name="state" placeholder="Ex: SP" maxlength="2" [(ngModel)]="user_state" />
+        </div>
+
+        <div *ngIf="!is_update_data && !is_update_password" class="userProfile-container-form-container-ctas">
+          <button class="userProfile-container-form-container-ctas-btnUpdateData" (click)="updateUserData()">
+            Alterar dados
+          </button>
+          <button class="userProfile-container-form-container-ctas-btnUpdatePassword" (click)="updateUserPassword()">
+            Alterar senha
+          </button>
+        </div>
+
+        <div *ngIf="is_update_data" class="userProfile-container-form-container-ctas">
+          <button class="userProfile-container-form-container-ctas-btnCancelUpdateData" (click)="cancelUpdateData()">
+            Cancelar
+          </button>
+          <button class="userProfile-container-form-container-ctas-btnSaveUpdateData" (click)="validateInputsUserData()">
+            Salvar alterações
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="is_update_password" class="userProfile-container-formPassword">
+      <div class="userProfile-container-formPassword-container">
+        <div class="userProfile-container-formPassword-container-password">
+          <label for="userLegacyPassword">Senha atual:</label>
+          <input type="password" id="userLegacyPassword" name="userLegacyPassword" placeholder="8 caracteres no mínimo" minlength="8" maxlength="50" [(ngModel)]="user_legacy_password" />
+          <span (click)="triggerLegacyPasswordVisibility()">
+            <span *ngIf="is_legacy_password_visible" class="material-symbols-outlined">visibility</span>
+            <span *ngIf="!is_legacy_password_visible" class="material-symbols-outlined">visibility_off</span>
+          </span>
+        </div>
+
+        <div class="userProfile-container-formPassword-container-password">
+          <label for="userFirstPassword">Senha nova:</label>
+          <input type="password" id="userFirstPassword" name="userFirstPassword" placeholder="8 caracteres no mínimo" minlength="8" maxlength="50" [(ngModel)]="user_new_password_1" />
+          <span (click)="triggerNew1PasswordVisibility()">
+            <span *ngIf="is_new_password_1_visible" class="material-symbols-outlined">visibility</span>
+            <span *ngIf="!is_new_password_1_visible" class="material-symbols-outlined">visibility_off</span>
+          </span>
+        </div>
+
+        <div class="userProfile-container-formPassword-container-password">
+          <label for="userSecondPassword">Repita a senha nova:</label>
+          <input type="password" id="userSecondPassword" name="userSecondPassword" placeholder="8 caracteres no mínimo" minlength="8" maxlength="50" [(ngModel)]="user_new_password_2" />
+          <span (click)="triggerNew2PasswordVisibility()">
+            <span *ngIf="is_new_password_2_visible" class="material-symbols-outlined">visibility</span>
+            <span *ngIf="!is_new_password_2_visible" class="material-symbols-outlined">visibility_off</span>
+          </span>
+        </div>
+
+        <div class="userProfile-container-form-container-ctas">
+          <button class="userProfile-container-form-container-ctas-btnUpdateData" (click)="cancelUpdatePassword()">
+            Cancelar
+          </button>
+          <button class="userProfile-container-form-container-ctas-btnUpdatePassword" (click)="validateInputsUserPassword()">
+            Salvar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="is_adm" class="userProfile-container-adm">
+      <div class="userProfile-container-adm-intro">
+        <h2>Administração</h2>
+      </div>
+      <div class="userProfile-container-adm-cta">
+        <button (click)="navigateToAdm()">Ir para página de administração</button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="is_message_modal_open" class="messageModal-container">
+    <div class="messageModal-content">
+      <div class="title">
+        <p>Atenção!</p>
+      </div>
+      <div class="message">
+        <div class="contentcategory-container">
+          <p class="topic">Mensagem:</p>
+          <p class="content">{{ modal_message }}</p>
+        </div>
+      </div>
+      <div class="buttons-container">
+        <button class="closeButton" (click)="is_message_modal_open = false">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <app-loader *ngIf="is_loader_open"></app-loader>
+</section>
