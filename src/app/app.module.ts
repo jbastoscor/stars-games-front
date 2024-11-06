@@ -15,6 +15,14 @@ import { AdmConsultaCategoriesComponent } from './components/adm-consulta-catego
 import { AdmConsultaUpdateGamesComponent } from './components/adm-consulta-update-games/adm-consulta-update-games.component';
 import { AdmDeleteCategoriesComponent } from './components/adm-delete-categories/adm-delete-categories.component';
 import { AdmDeleteGamesComponent } from './components/adm-delete-games/adm-delete-games.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
+import { SignInSignUpComponent } from './components/sign-in-sign-up/sign-in-sign-up.component';
+import { SignInSignUpPageComponent } from './views/sign-in-sign-up-page/sign-in-sign-up-page.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { ProfileComponent } from './views/profile/profile.component';
+import { GameCategoriesComponent } from './components/game-categories/game-categories.component';
+import { CategoriesComponent } from './views/categories/categories.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +36,15 @@ import { AdmDeleteGamesComponent } from './components/adm-delete-games/adm-delet
     AdmConsultaCategoriesComponent,
     AdmConsultaUpdateGamesComponent,
     AdmDeleteCategoriesComponent,
-    AdmDeleteGamesComponent
+    AdmDeleteGamesComponent,
+    FooterComponent,
+    HeaderComponent,
+    SignInSignUpComponent,
+    SignInSignUpPageComponent,
+    UserProfileComponent,
+    ProfileComponent,
+    GameCategoriesComponent,
+    CategoriesComponent,
   ],
   imports: [
     BrowserModule,

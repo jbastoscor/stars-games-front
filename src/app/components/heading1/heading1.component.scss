@@ -1,0 +1,28 @@
+.titlePage-section {
+  width: 100%;
+
+  .titlePage-container {
+    margin: 35px 15px 15px 15px;
+
+    @media screen and (min-width: 1050px) {
+      max-width: 1024px;
+      width: 100%;
+      margin: 35px auto;
+    }
+
+    @media screen and (min-width: 1600px) {
+      max-width: 1550px;
+    }
+
+    h1 {
+      font-family: "Josefin Sans", sans-serif;
+      font-size: 24px;
+      text-transform: uppercase;
+      text-align: center;
+
+      @media screen and (min-width: 768px) {
+        font-size: 32px;
+      }
+    }
+  }
+}
