@@ -41,8 +41,8 @@ export class AdmCadastroGamesComponent implements OnInit {
     const body = { user_username: username };
 
     this.http.post(fetchURL, body).subscribe((response: any) => {
-      if (response.length === 1 && !response[0].is_adm) {
-        window.location.href = `${window.location.origin}/login`;
+      if (response.length === 1 && response[0].is_adm) {
+        return;
       } else {
         window.location.href = `${window.location.origin}/login`;
       }

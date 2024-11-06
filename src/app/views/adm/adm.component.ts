@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./adm.component.scss']
 })
 export class AdmComponent {
-
+  headingText: string = 'Administração de jogos e categorias';
 }
