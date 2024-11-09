@@ -1,0 +1,22 @@
+<section class="carrossel-section">
+  <div class="carrossel-container">
+    <h2 class="carrossel-title">Jogos de {{ gamesCategory }}</h2>
+    <ng-container *ngIf="games.length">
+      <ngx-slick-carousel class="carousel" [config]="settings">
+        <ng-container *ngFor="let game of games; let i = index">
+          <div ngxSlickItem class="carrossel-games" *ngIf="i <= 9">
+            <div>
+              <img class="carrossel-games-img" [src]="game.game_image_url" />
+              <div class="carrossel-games-texts">
+                <p class="carrossel-games-texts-name">{{ game.game_name }}</p>
+                <p class="carrossel-games-texts-description">{{ game.game_description }}</p>
+              </div>
+            </div>
+            <button class="carrossel-games-cta" (click)="navigationToGame(game)">Saiba mais</button>
+          </div>
+        </ng-container>
+      </ngx-slick-carousel>
+    </ng-container>
+  </div>
+  <app-loader *ngIf="loaderOpen"></app-loader>
+</section>

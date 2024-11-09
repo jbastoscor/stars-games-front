@@ -1,7 +1,7 @@
 <section class="header-section">
   <div class="header-container">
     <div class="main-module-container">
-      <a href="/" class="logo-container">
+      <a href="/" class="logo-container" title="Home">
         <img src="http://stars-games.s3-website-sa-east-1.amazonaws.com/assets/disney-wish-star.png" alt="Logo bowser" />
         <div class="name-container">
           <p>Stars</p>
@@ -32,13 +32,13 @@
       </div>
 
       <div class="category-profile-container">
-        <div class="category" (click)="navigateToCategories()">
+        <div class="category" (click)="navigateToCategories()" title="Categorias de jogos">
           <span class="material-symbols-outlined" style="font-size: 50px;">category</span>
         </div>
 
         <div class="profile" (click)="handleProfile()">
-          <span *ngIf="!is_logged" class="material-symbols-outlined" style="font-size: 50px;">login</span>
-          <span *ngIf="is_logged" class="material-symbols-outlined" style="font-size: 50px;">account_circle</span>
+          <span *ngIf="!is_logged" class="material-symbols-outlined" style="font-size: 50px;" title="Login ou cadastro">login</span>
+          <span *ngIf="is_logged" class="material-symbols-outlined" style="font-size: 50px;" title="Perfil">account_circle</span>
         </div>
 
         <div *ngIf="is_modal_profile_open" class="modal-profile">

@@ -1,0 +1,246 @@
+.bannerGame-section {
+  width: 100%;
+  margin-top: 15px;
+  border-bottom: 1px solid rgba(0, 0, 2, 0.4);
+
+  .bannerGame-container {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 15px;
+
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    @media screen and (min-width: 1050px) {
+      max-width: 1024px;
+      width: 100%;
+      margin: 30px auto;
+    }
+
+    @media screen and (min-width: 1600px) {
+      max-width: 1550px;
+    }
+
+    .bannerGame-infoGame {
+      margin-bottom: 15px;
+
+      @media screen and (min-width: 768px) {
+        display: flex;
+        flex-direction: column;
+      }
+
+      &-container {
+        &-intro {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-bottom: 25px;
+
+          &-title {
+            font-family: "Josefin Sans", sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-align: center;
+
+            @media screen and (min-width: 1024px) {
+              font-size: 24px;
+            }
+          }
+        }
+
+        &-imgMobile {
+          max-width: 100%;
+          box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.7);
+          margin-bottom: 15px;
+
+          @media screen and (min-width: 768px) {
+            display: none;
+          }
+        }
+
+        &-description {
+          font-family: "Josefin Sans", sans-serif;
+          font-size: 16px;
+          text-align: justify;
+          justify-self: flex-end;
+          margin-bottom: 15px;
+
+          @media screen and (min-width: 1024px) {
+            font-size: 20px;
+          }
+
+          @media screen and (min-width: 1600px) {
+            margin-bottom: 30px;
+          }
+        }
+
+        &-category {
+          font-family: "Josefin Sans", sans-serif;
+          font-size: 16px;
+          text-align: justify;
+          justify-self: flex-end;
+
+          @media screen and (min-width: 768px) {
+            margin-bottom: 15px;
+          }
+
+          @media screen and (min-width: 1024px) {
+            font-size: 20px;
+          }
+
+          @media screen and (min-width: 1600px) {
+            margin-bottom: 30px;
+          }
+        }
+      }
+
+      .bannerGame-ctaMore-desk {
+        display: none;
+        font-family: "Josefin Sans", sans-serif;
+        font-size: 14px;
+        text-transform: uppercase;
+        color: #fff;
+        width: 100%;
+        height: 30px;
+        padding-top: 5px;
+        margin: 0;
+        background-color: #a421d3;
+        border: 1px solid #fff;
+        border-radius: 5px;
+        cursor: pointer;
+
+        @media screen and (min-width: 768px) {
+          display: block;
+        }
+
+        @media screen and (min-width: 1024px) {
+          width: 300px;
+          margin: 0 auto;
+        }
+      }
+    }
+
+    .bannerGame-imgGame {
+      display: none;
+
+      @media screen and (min-width: 768px) {
+        display: block;
+        max-width: 400px;
+        width: 100%;
+        margin-left: 15px;
+        margin-bottom: 0;
+        box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.7);
+      }
+
+      @media screen and (min-width: 1600px) {
+        max-width: 600px;
+        margin-left: 50px;
+      }
+    }
+
+    .bannerGame-ctaMore-mobile {
+      font-family: "Josefin Sans", sans-serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: #fff;
+      width: 100%;
+      height: 30px;
+      padding-top: 5px;
+      margin: 0;
+      background-color: #a421d3;
+      border: 1px solid #fff;
+      border-radius: 5px;
+      cursor: pointer;
+
+      @media screen and (min-width: 768px) {
+        display: none;
+      }
+    }
+  }
+
+  .messageModal-container {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .messageModal-content {
+      position: absolute;
+      width: calc(100% - 30px);
+      height: auto;
+      background-color: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.6);
+      border-radius: 5px;
+      margin: 15px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+
+      @media screen and (min-width: 1050px) {
+        width: 1024px;
+      }
+
+      .title {
+        margin-bottom: 20px;
+
+        p {
+          font-family: "Josefin Sans", sans-serif;
+          font-size: 20px;
+          font-weight: 700;
+          text-align: center;
+          text-transform: uppercase;
+        }
+      }
+
+      .message {
+        margin-bottom: 15px;
+
+        .contentcategory-container {
+          margin-bottom: 15px;
+          padding: 5px;
+          border: 1px solid #000;
+          border-radius: 5px;
+
+          .topic {
+            font-family: "Josefin Sans", sans-serif;
+            margin-bottom: 5px;
+          }
+
+          .content {
+            font-family: "Josefin Sans", sans-serif;
+            font-weight: 700;
+            word-wrap: break-word;
+          }
+        }
+      }
+
+      .buttons-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .closeButton {
+          font-family: "Josefin Sans", sans-serif;
+          font-size: 14px;
+          text-transform: uppercase;
+          color: #fff;
+          width: 150px;
+          height: 30px;
+          padding-top: 5px;
+          margin: 0;
+          background-color: #049cd8;
+          border: 1px solid #fff;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

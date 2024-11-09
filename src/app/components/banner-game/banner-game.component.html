@@ -1,0 +1,39 @@
+<section class="bannerGame-section">
+  <div class="bannerGame-container">
+    <div class="bannerGame-infoGame">
+      <div class="bannerGame-infoGame-container">
+        <div class="bannerGame-infoGame-container-intro">
+          <h1 class="bannerGame-infoGame-container-intro-title">{{ game_name }}</h1>
+          <div>
+            <rating [max]="5" [(ngModel)]="valueGameRating" [readonly]="true" style="font-size: 24px;"></rating>
+          </div>
+        </div>
+        <img class="bannerGame-infoGame-container-imgMobile" [src]="game_image_url" />
+        <p class="bannerGame-infoGame-container-description">{{ game_description }}</p>
+        <p class="bannerGame-infoGame-container-category">Categoria: {{ game_category }}</p>
+      </div>
+      <button class="bannerGame-ctaMore-desk" (click)="playGame()">Jogar agora</button>
+    </div>
+    <img class="bannerGame-imgGame" [src]="game_image_url" />
+    <button class="bannerGame-ctaMore-mobile" (click)="playGame()">Jogar agora</button>
+  </div>
+
+  <div *ngIf="is_message_modal_open" class="messageModal-container">
+    <div class="messageModal-content">
+      <div class="title">
+        <p>Atenção!</p>
+      </div>
+      <div class="message">
+        <div class="contentcategory-container">
+          <p class="topic">Mensagem:</p>
+          <p class="content">{{ modal_message }}</p>
+        </div>
+      </div>
+      <div class="buttons-container">
+        <button class="closeButton" (click)="closeMessageModal()">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <app-loader *ngIf="is_loader_open"></app-loader>
+</section>

@@ -46,6 +46,7 @@
             font-size: 18px;
             font-weight: 700;
             text-transform: uppercase;
+            margin: 0;
           }
         }
       }
@@ -83,7 +84,7 @@
         &-results-desk {
           background-color: #fff;
           position: absolute;
-          bottom: -255px;
+          bottom: -265px;
           width: 100%;
           height: 250px;
           padding: 10px;
@@ -229,7 +230,8 @@
               font-family: "Josefin Sans", sans-serif;
               font-size: 14px;
               font-weight: 700;
-              margin-bottom: 15px;
+              color: #fff;
+              margin-bottom: 5px;
             }
 
             button {
@@ -239,7 +241,7 @@
               border: none;
               padding: 0;
               cursor: pointer;
-              margin-bottom: 15px;
+              margin-bottom: 5px;
 
               &:last-child {
                 margin: 0;
@@ -288,7 +290,7 @@
     .seacrh-results-mobile {
       background-color: #fff;
       position: absolute;
-      bottom: -255px;
+      bottom: -265px;
       width: 100%;
       height: 250px;
       padding: 10px;

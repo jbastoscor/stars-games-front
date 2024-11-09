@@ -6,6 +6,9 @@ import { AdmComponent } from './views/adm/adm.component';
 import { SignInSignUpPageComponent } from './views/sign-in-sign-up-page/sign-in-sign-up-page.component';
 import { ProfileComponent } from './views/profile/profile.component';
 import { CategoriesComponent } from './views/categories/categories.component';
+import { NotFoundPageComponent } from './views/not-found-page/not-found-page.component';
+import { CategoryGamesPageComponent } from './views/category-games-page/category-games-page.component';
+import { GameComponent } from './views/game/game.component';
 
 const routes: Routes = [
   {
@@ -27,6 +30,18 @@ const routes: Routes = [
   {
     path: 'categories',
     component: CategoriesComponent
+  },
+  {
+    path: 'category',
+    component: CategoryGamesPageComponent
+  },
+  {
+    path: 'game',
+    component: GameComponent
+  },
+  {
+    path: '**',
+    component: NotFoundPageComponent
   }
 ];
 

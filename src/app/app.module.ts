@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { RatingModule } from 'ngx-bootstrap/rating';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +25,16 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { ProfileComponent } from './views/profile/profile.component';
 import { GameCategoriesComponent } from './components/game-categories/game-categories.component';
 import { CategoriesComponent } from './views/categories/categories.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { NotFoundPageComponent } from './views/not-found-page/not-found-page.component';
+import { CategoryGamesComponent } from './components/category-games/category-games.component';
+import { CategoryGamesPageComponent } from './views/category-games-page/category-games-page.component';
+import { BannerHomeComponent } from './components/banner-home/banner-home.component';
+import { CarrosselGamesRecommendedComponent } from './components/carrossel-games-recommended/carrossel-games-recommended.component';
+import { CarrosselGamesCategoryComponent } from './components/carrossel-games-category/carrossel-games-category.component';
+import { GameComponent } from './views/game/game.component';
+import { BannerGameComponent } from './components/banner-game/banner-game.component';
+import { AvaliacaoGameComponent } from './components/avaliacao-game/avaliacao-game.component';
 
 @NgModule({
   declarations: [
@@ -45,12 +57,24 @@ import { CategoriesComponent } from './views/categories/categories.component';
     ProfileComponent,
     GameCategoriesComponent,
     CategoriesComponent,
+    PageNotFoundComponent,
+    NotFoundPageComponent,
+    CategoryGamesComponent,
+    CategoryGamesPageComponent,
+    BannerHomeComponent,
+    CarrosselGamesRecommendedComponent,
+    CarrosselGamesCategoryComponent,
+    GameComponent,
+    BannerGameComponent,
+    AvaliacaoGameComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    SlickCarouselModule,
+    RatingModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
