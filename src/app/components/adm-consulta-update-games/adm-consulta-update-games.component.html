@@ -1,0 +1,73 @@
+<section class="game-consult-section">
+  <div class="game-consult-container">
+    <div class="game-consult-form-container">
+      <div class="title">
+        <h2>Consulta e alteração de jogos</h2>
+      </div>
+
+      <div class="gameForm-container">
+        <div class="gameName-container">
+          <label for="gameName">Nome do jogo:</label>
+          <input type="text" id="gameName" name="gameName" placeholder="Digite aqui" [(ngModel)]="game_name" />
+        </div>
+
+        <div *ngIf="categories && game_update" class="gameCategory-container">
+          <label for="gameCategory">Categoria:</label>
+          <select id="gameCategory" name="gameCategory" [(ngModel)]="game_category">
+            <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+          </select>
+        </div>
+
+        <div *ngIf="game_update" class="gameUrl-container">
+          <label for="gameUrl">URL do jogo:</label>
+          <input type="text" id="gameUrl" name="gameUrl" placeholder="Digite aqui" [(ngModel)]="game_url" />
+        </div>
+
+        <div *ngIf="game_update" class="gameVideoUrl-container">
+          <label for="gameVideoUrl">URL do vídeo do jogo (opcional):</label>
+          <input type="text" id="gameVideoUrl" name="gameVideoUrl" placeholder="Digite aqui" [(ngModel)]="game_video_url" />
+        </div>
+
+        <div *ngIf="game_update" class="gameImageUrl-container">
+          <label for="gameImageUrl">URL da imagem do jogo:</label>
+          <input type="text" id="gameImageUrl" name="gameImageUrl" placeholder="Digite aqui" [(ngModel)]="game_image_url" />
+        </div>
+
+        <div *ngIf="game_update" class="gameDescription-container">
+          <label for="gameDescription">Descrição do jogo (255 caracteres):</label>
+          <textarea id="gameDescription" name="gameDescription" placeholder="Digite aqui" [(ngModel)]="game_description"></textarea>
+        </div>
+      </div>
+
+      <div *ngIf="!game_update" class="consultButton-container">
+        <button (click)="validateInputConsult()">Consultar</button>
+      </div>
+
+      <div *ngIf="game_update" class="updateButton-container">
+        <button class="cleanButton" (click)="cleanGame()">Cancelar</button>
+        <button class="updateButton" (click)="validateInputsUpdate()">Salvar alterações</button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="modal_open" class="messageModal-container">
+    <div class="messageModal-content">
+      <div class="title">
+        <p>Atenção!</p>
+      </div>
+
+      <div class="message">
+        <div class="contentGame-container">
+          <p class="topic">Mensagem:</p>
+          <p class="content">{{ modal_message }}</p>
+        </div>
+      </div>
+
+      <div class="buttons-container">
+        <button class="closeButton" (click)="closeModal()">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <app-loader *ngIf="loader_open"></app-loader>
+</section>

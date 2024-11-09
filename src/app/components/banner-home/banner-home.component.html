@@ -1,0 +1,17 @@
+<section class="bannerHome-section">
+  <div class="bannerHome-container">
+    <div class="bannerHome-infoGame">
+      <div class="bannerHome-infoGame-container">
+        <h1 class="bannerHome-infoGame-container-title">{{ game_name }}</h1>
+        <img class="bannerHome-infoGame-container-imgMobile" [src]="game_image_url" />
+        <p class="bannerHome-infoGame-container-description">{{ game_description }}</p>
+        <p class="bannerHome-infoGame-container-category">Categoria: {{ game_category }}</p>
+      </div>
+      <button class="bannerHome-ctaMore-desk" (click)="navigationToGame()">Saiba mais</button>
+    </div>
+    <img class="bannerHome-imgGame" [src]="game_image_url" />
+    <button class="bannerHome-ctaMore-mobile" (click)="navigationToGame()">Saiba mais</button>
+  </div>
+
+  <app-loader *ngIf="loader_open"></app-loader>
+</section>

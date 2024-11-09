@@ -1,0 +1,41 @@
+<section class="categoryGames-section">
+  <div class="categoryGames-container">
+    <div *ngIf="category_name && category_logo" class="categoryGames-title">
+      <img [src]="category_logo" />
+      <h1>Jogos de {{ category_name }}</h1>
+      <img [src]="category_logo" />
+    </div>
+
+    <ul *ngIf="category_games" class="categoryGames-cards">
+      <li *ngFor="let game of category_games" class="categoryGames-cards-item" (click)="navigationToGame(game._id)">
+        <div class="categoryGames-cards-item-img">
+          <img [src]="game.game_image_url" [alt]="'Imagem ilustrativa da categoria de games: ' + game.game_name" />
+        </div>
+        <div class="categoryGames-cards-item-info">
+          <p class="categoryGames-cards-item-info-title">{{ game.game_name }}</p>
+          <p class="categoryGames-cards-item-info-description">{{ game.game_description }}</p>
+          <p class="categoryGames-cards-item-info-btn">Clique para saber mais</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="is_modal_message_open" class="messageModal-container">
+    <div class="messageModal-content">
+      <div class="title">
+        <p>Atenção!</p>
+      </div>
+      <div class="message">
+        <div class="contentcategory-container">
+          <p class="topic">Mensagem:</p>
+          <p class="content">{{ modal_message }}</p>
+        </div>
+      </div>
+      <div class="buttons-container">
+        <button class="closeButton" (click)="closeModal()">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <app-loader *ngIf="is_loader_open"></app-loader>
+</section>

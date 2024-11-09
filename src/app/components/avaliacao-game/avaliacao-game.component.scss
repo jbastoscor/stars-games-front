@@ -1,0 +1,528 @@
+.reviewGame-section {
+  width: 100%;
+  margin-top: 15px;
+  border-bottom: 1px solid rgba(0, 0, 2, 0.4);
+
+  .reviewGame-container {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 15px;
+
+    @media screen and (min-width: 1050px) {
+      max-width: 1024px;
+      width: 100%;
+      margin: 30px auto;
+    }
+
+    @media screen and (min-width: 1600px) {
+      max-width: 1550px;
+    }
+
+    .reviewGame-intro {
+      &-title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 15px;
+
+        h2 {
+          font-family: "Josefin Sans", sans-serif;
+          font-size: 16px;
+          font-weight: 700;
+          text-transform: uppercase;
+          padding-top: 5px;
+          margin: 0 5px;
+
+          @media screen and (min-width: 360px) {
+            font-size: 18px;
+          }
+        }
+      }
+
+      &-rating {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 15px;
+
+        &-label {
+          display: flex;
+          margin-top: 5px;
+
+          p {
+            font-family: "Josefin Sans", sans-serif;
+            font-size: 16px;
+
+            &:first-child {
+              font-weight: 700;
+              margin-right: 10px;
+
+              span {
+                font-size: 14px;
+                font-weight: normal;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .reviewGame-rate {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+
+      &-rateBtn {
+        font-family: "Josefin Sans", sans-serif;
+        font-size: 14px;
+        text-transform: uppercase;
+        color: #fff;
+        width: 200px;
+        height: 30px;
+        padding-top: 5px;
+        margin: 0;
+        background-color: #a421d3;
+        border: 1px solid #fff;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      &-btnsUserReview {
+        display: flex;
+        flex-direction: column;
+
+        @media screen and (min-width: 768px) {
+          flex-direction: row;
+        }
+
+        &-editRateBtn {
+          font-family: "Josefin Sans", sans-serif;
+          font-size: 14px;
+          text-transform: uppercase;
+          color: #fff;
+          width: 200px;
+          height: 30px;
+          padding-top: 5px;
+          margin: 0 0 10px 0;
+          background-color: #a421d3;
+          border: 1px solid #fff;
+          border-radius: 5px;
+          cursor: pointer;
+
+          @media screen and (min-width: 768px) {
+            margin: 0 15px 0 0;
+          }
+        }
+
+        &-deleteRateBtn {
+          font-family: "Josefin Sans", sans-serif;
+          font-size: 14px;
+          text-transform: uppercase;
+          color: #fff;
+          width: 200px;
+          height: 30px;
+          padding-top: 5px;
+          margin: 0;
+          background-color: #a421d3;
+          border: 1px solid #fff;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+      }
+
+      &-form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        &-valueLabel {
+          font-family: "Josefin Sans", sans-serif;
+          font-size: 16px;
+        }
+
+        &-valueIndex {
+          font-family: "Josefin Sans", sans-serif;
+          font-size: 16px;
+          padding-top: 5px;
+          margin-left: 10px;
+        }
+
+        &-textArea {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 10px;
+
+          label {
+            font-family: "Josefin Sans", sans-serif;
+            font-size: 16px;
+
+            span {
+              font-size: 14px;
+            }
+          }
+
+          textarea {
+            font-family: "Josefin Sans", sans-serif;
+            font-size: 14px;
+            width: 100%;
+            height: 100px;
+            padding: 5px;
+            border: 1px solid #282828;
+            border-radius: 5px;
+            outline-color: #000;
+            margin-top: 3px;
+
+            @media screen and (min-width: 1050px) {
+              font-size: 16px;
+              height: 80px;
+            }
+          }
+        }
+
+        &-btns {
+          display: flex;
+
+          &-save,
+          &-cancel {
+            font-family: "Josefin Sans", sans-serif;
+            font-size: 14px;
+            text-transform: uppercase;
+            color: #fff;
+            width: 120px;
+            height: 30px;
+            padding-top: 5px;
+            background-color: #049cd8;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            margin: 0 auto;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .reviewGame-reviews-user {
+      background-color: #a421d3;
+      border: 1px solid #000;
+      border-radius: 5px;
+      padding: 15px;
+      margin-bottom: 10px;
+
+      &-list {
+        display: flex;
+        flex-direction: column;
+        list-style: square;
+        margin: 0;
+
+        li {
+          padding-bottom: 15px;
+          margin-bottom: 15px;
+          border-bottom: 1px solid #000;
+
+          &:last-child {
+            border: none;
+            margin: 0;
+            padding: 0;
+          }
+
+          .user {
+            margin-bottom: 10px;
+
+            p {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 16px;
+              color: #fff;
+            }
+          }
+
+          .rating {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+
+            p {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 16px;
+              font-weight: bold;
+              padding-top: 5px;
+              margin-right: 10px;
+              margin-bottom: 0;
+              color: #fff;
+            }
+          }
+
+          .review {
+            display: flex;
+            flex-direction: column;
+
+            @media screen and (min-width: 768px) {
+              flex-direction: row;
+            }
+
+            p {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 16px;
+              color: #fff;
+              margin-bottom: 0px;
+
+              &:first-child {
+                font-weight: bold;
+                margin-bottom: 5px;
+                margin-right: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .reviewGame-reviews {
+      background-color: #a421d3;
+      border: 1px solid #000;
+      border-radius: 5px;
+      padding: 15px;
+
+      &-list {
+        display: flex;
+        flex-direction: column;
+        list-style: square;
+        margin: 0;
+
+        li {
+          padding-bottom: 15px;
+          margin-bottom: 15px;
+          border-bottom: 1px solid #000;
+
+          &:last-child {
+            border: none;
+            margin: 0;
+            padding: 0;
+          }
+
+          .user {
+            margin-bottom: 10px;
+
+            p {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 16px;
+              color: #fff;
+            }
+          }
+
+          .rating {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+
+            p {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 16px;
+              font-weight: bold;
+              padding-top: 5px;
+              margin-right: 10px;
+              margin-bottom: 0;
+              color: #fff;
+            }
+          }
+
+          .review {
+            display: flex;
+            flex-direction: column;
+
+            @media screen and (min-width: 768px) {
+              flex-direction: row;
+            }
+
+            p {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 16px;
+              color: #fff;
+              margin-bottom: 0px;
+
+              &:first-child {
+                font-weight: bold;
+                margin-bottom: 5px;
+                margin-right: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .messageModal-container {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .messageModal-content {
+      position: absolute;
+      width: calc(100% - 30px);
+      height: auto;
+      background-color: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.6);
+      border-radius: 5px;
+      margin: 15px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+
+      @media screen and (min-width: 1050px) {
+        width: 1024px;
+      }
+
+      .title {
+        margin-bottom: 20px;
+
+        p {
+          font-family: "Josefin Sans", sans-serif;
+          font-size: 20px;
+          font-weight: 700;
+          text-align: center;
+          text-transform: uppercase;
+        }
+      }
+
+      .message {
+        margin-bottom: 15px;
+
+        .contentcategory-container {
+          margin-bottom: 15px;
+          padding: 5px;
+          border: 1px solid #000;
+          border-radius: 5px;
+
+          .topic {
+            font-family: "Josefin Sans", sans-serif;
+            margin-bottom: 5px;
+          }
+
+          .content {
+            font-family: "Josefin Sans", sans-serif;
+            font-weight: 700;
+            word-wrap: break-word;
+          }
+        }
+      }
+
+      .buttons-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .closeButton {
+          font-family: "Josefin Sans", sans-serif;
+          font-size: 14px;
+          text-transform: uppercase;
+          color: #fff;
+          width: 150px;
+          height: 30px;
+          padding-top: 5px;
+          margin: 0;
+          background-color: #049cd8;
+          border: 1px solid #fff;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .messageModal-container-delete {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .messageModal-content {
+      position: absolute;
+      width: calc(100% - 30px);
+      height: auto;
+      background-color: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.6);
+      border-radius: 5px;
+      margin: 15px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+
+      @media screen and (min-width: 1050px) {
+        width: 1024px;
+      }
+
+      .title {
+        margin-bottom: 20px;
+
+        p {
+          font-family: "Josefin Sans", sans-serif;
+          font-size: 20px;
+          font-weight: 700;
+          text-align: center;
+          text-transform: uppercase;
+        }
+      }
+
+      .message {
+        margin-bottom: 15px;
+
+        .contentcategory-container {
+          margin-bottom: 15px;
+          padding: 5px;
+          border: 1px solid #000;
+          border-radius: 5px;
+
+          .topic {
+            font-family: "Josefin Sans", sans-serif;
+            margin-bottom: 5px;
+          }
+
+          .content {
+            font-family: "Josefin Sans", sans-serif;
+            font-weight: 700;
+            word-wrap: break-word;
+          }
+        }
+      }
+
+      .buttons-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @media screen and (min-width: 768px) {
+          justify-content: center;
+        }
+
+        .closeButton {
+          font-family: "Josefin Sans", sans-serif;
+          font-size: 14px;
+          text-transform: uppercase;
+          color: #fff;
+          width: 120px;
+          height: 30px;
+          padding-top: 5px;
+          margin: 0;
+          background-color: #049cd8;
+          border: 1px solid #fff;
+          border-radius: 5px;
+          cursor: pointer;
+
+          &:first-child {
+            margin-right: 20px;
+          }
+        }
+      }
+    }
+  }
+}

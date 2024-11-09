@@ -1,0 +1,151 @@
+<section class="reviewGame-section">
+  <div class="reviewGame-container">
+    <div class="reviewGame-intro">
+      <div class="reviewGame-intro-title">
+        <!-- <mat-icon style="color: red;">star</mat-icon> -->
+        <h2>Avaliações dos usuários</h2>
+        <!-- <mat-icon style="color: red;">star</mat-icon> -->
+      </div>
+
+      <div class="reviewGame-intro-rating">
+        <!-- <mat-rating [value]="rating_value" [precision]="0.1" [readOnly]="true" style="color: red;"></mat-rating> -->
+        <rating [max]="5" [(ngModel)]="rating_value" [readonly]="true" style="font-size: 24px;"></rating>
+        <div class="reviewGame-intro-rating-label">
+          <p>
+            {{ rating_value }}
+            <span>/5</span>
+          </p>
+          <p>({{ rating_label }})</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reviewGame-rate">
+      <button *ngIf="!is_rate_form_open && !user_review" class="reviewGame-rate-rateBtn" (click)="rateGame()">
+        Avaliar jogo
+      </button>
+      <div *ngIf="user_review" class="reviewGame-rate-btnsUserReview">
+        <button class="reviewGame-rate-btnsUserReview-editRateBtn" (click)="editReview()">
+          Editar avaliação
+        </button>
+        <button class="reviewGame-rate-btnsUserReview-deleteRateBtn" (click)="warningDelete()">
+          Excluir avaliação
+        </button>
+      </div>
+      <div *ngIf="is_rate_form_open" class="reviewGame-rate-form">
+        <p class="reviewGame-rate-form-valueLabel">Sua nota:</p>
+
+        <div style="width: 100%; display: flex; align-items: center; margin-bottom: 15px;">
+          <rating [max]="5" [(ngModel)]="rate_value" [readonly]="false" (ngModelChange)="rate_value = $event" (onHover)="rate_hover = $event" (onLeave)="resetStar()" style="font-size: 24px;"></rating>
+
+          <!-- <mat-rating [value]="rate_value" [precision]="1" [getLabelText]="getLabelText" style="color: red;" (change)="rate_value = $event.value" (hoverChange)="rate_hover = $event.hover"></mat-rating> -->
+
+          <span *ngIf="rate_value !== null" class="reviewGame-rate-form-valueIndex">
+            {{ rate_labels[rate_hover !== -1 ? rate_hover : rate_value] }}
+          </span>
+        </div>
+
+        <div class="reviewGame-rate-form-textArea">
+          <label for="gameReview">
+            Escreva sua avaliação: <span>(255 caracteres)</span>
+          </label>
+          <textarea maxlength="255" type="text" id="gameReview" name="gameReview" placeholder="Digite aqui" [(ngModel)]="rate_text"></textarea>
+        </div>
+
+        <div class="reviewGame-rate-form-btns">
+          <button class="reviewGame-rate-form-btns-cancel" (click)="cleanRate()">
+            Cancelar
+          </button>
+          <button class="reviewGame-rate-form-btns-save" (click)="validateInputsRate()">
+            Salvar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="user_review" class="reviewGame-reviews-user">
+      <ul class="reviewGame-reviews-user-list">
+        <li>
+          <div class="user">
+            <p>Sua avaliação:</p>
+          </div>
+          <div class="rating">
+            <p>Nota:</p>
+            <rating [max]="5" [(ngModel)]="user_review.game_rating" [readonly]="true" style="font-size: 24px; color: #ffffff;"></rating>
+          </div>
+          <div class="review">
+            <p>Avaliação:</p>
+            <p>{{ user_review.game_review }}</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div *ngIf="game_reviews && game_reviews.length >= 1" class="reviewGame-reviews">
+      <ul class="reviewGame-reviews-list">
+        <ng-container *ngFor="let review of game_reviews; let i = index">
+          <li *ngIf="i <= 5">
+            <div class="user">
+              <p>{{ review.user_full_name.split(' ')[0] }}</p>
+            </div>
+            <div class="rating">
+              <p>Nota:</p>
+              <rating [max]="5" [(ngModel)]="review.game_rating" [readonly]="true" style="font-size: 24px; color: #ffffff;"></rating>
+            </div>
+            <div class="review">
+              <p>Avaliação:</p>
+              <p>{{ review.game_review }}</p>
+            </div>
+          </li>
+        </ng-container>
+      </ul>
+    </div>
+  </div>
+
+  <div *ngIf="is_message_modal_open" class="messageModal-container">
+    <div class="messageModal-content">
+      <div class="title">
+        <p>Atenção!</p>
+      </div>
+
+      <div class="message">
+        <div class="contentcategory-container">
+          <p class="topic">Mensagem:</p>
+          <p class="content">{{ modal_message }}</p>
+        </div>
+      </div>
+
+      <div class="buttons-container">
+        <button class="closeButton" (click)="is_message_modal_open = false">
+          Fechar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="is_delete_review_modal_open" class="messageModal-container-delete">
+    <div class="messageModal-content">
+      <div class="title">
+        <p>Atenção!</p>
+      </div>
+
+      <div class="message">
+        <div class="contentcategory-container">
+          <p class="topic">Mensagem:</p>
+          <p class="content">{{ modal_delete_review_message }}</p>
+        </div>
+      </div>
+
+      <div class="buttons-container">
+        <button class="closeButton" (click)="is_delete_review_modal_open = false">
+          Fechar
+        </button>
+        <button class="closeButton" (click)="deleteReview()">
+          Excluir
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <app-loader *ngIf="is_loader_open"></app-loader>
+</section>

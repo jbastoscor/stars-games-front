@@ -1,0 +1,51 @@
+<section class="category-register-section">
+  <div class="category-register-container">
+    <div class="category-register-form-container">
+      <div class="title">
+        <h2>Cadastro de categorias</h2>
+      </div>
+
+      <div class="categoryForm-container">
+        <div class="categoryName-container">
+          <label for="categoryName">Nome da categoria:</label>
+          <input type="text" id="categoryName" name="categoryName" placeholder="Digite aqui" [(ngModel)]="category_name" />
+        </div>
+
+        <div class="categoryLogo-container">
+          <label for="categoryLogo">URL do ícone da categoria:</label>
+          <input type="text" id="categoryLogo" name="categoryLogo" placeholder="Digite aqui" [(ngModel)]="category_logo" />
+        </div>
+
+        <div class="categoryImage-container">
+          <label for="categoryImage">URL da imagem da categoria:</label>
+          <input type="text" id="categoryImage" name="categoryImage" placeholder="Digite aqui" [(ngModel)]="category_image" />
+        </div>
+      </div>
+
+      <div class="registerButton-container">
+        <button (click)="validateInputs()">Cadastrar</button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="modal_open" class="messageModal-container">
+    <div class="messageModal-content">
+      <div class="title">
+        <p>Atenção!</p>
+      </div>
+
+      <div class="message">
+        <div class="contentcategory-container">
+          <p class="topic">Mensagem:</p>
+          <p class="content">{{ modal_message }}</p>
+        </div>
+      </div>
+
+      <div class="buttons-container">
+        <button class="closeButton" (click)="closeModal()">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <app-loader *ngIf="loader_open"></app-loader>
+</section>

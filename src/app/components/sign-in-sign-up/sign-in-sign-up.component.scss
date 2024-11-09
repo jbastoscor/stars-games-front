@@ -1,0 +1,707 @@
+.signInSignUp-section {
+  width: 100%;
+  margin-top: 15px;
+  border-bottom: 1px solid rgba(0, 0, 2, 0.4);
+  min-height: 300px;
+
+  .signInSignUp-container {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 15px;
+
+    @media screen and (min-width: 1050px) {
+      max-width: 1024px;
+      width: 100%;
+      margin: 30px auto;
+    }
+
+    @media screen and (min-width: 1600px) {
+      max-width: 1550px;
+    }
+
+    &-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 25px;
+
+      h1 {
+        font-family: "Josefin Sans", sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+
+        @media screen and (min-width: 768px) {
+          font-size: 22px;
+        }
+      }
+    }
+
+    .signInSignUp-mobile {
+      &-signIn {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+
+        &-cta {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          margin-bottom: 15px;
+
+          &-icon {
+            margin-right: 5px;
+          }
+
+          &-text {
+            p {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 16px;
+              text-transform: uppercase;
+              margin-bottom: 2px;
+            }
+
+            span {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 14px;
+            }
+          }
+        }
+
+        &-form {
+          display: flex;
+          flex-direction: column;
+          background-color: #a421d3;
+          padding: 15px;
+          border: 1px solid #000;
+          border-radius: 5px;
+
+          &-label {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+
+            label {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 14px;
+            }
+
+            input {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 14px;
+              height: 30px;
+              width: 100%;
+              padding: 6px 6px 3px 5px;
+              border: 1px solid #282828;
+              border-radius: 5px;
+              outline-color: #000;
+            }
+          }
+
+          &-password {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+
+            label {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 14px;
+            }
+
+            input {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 14px;
+              height: 30px;
+              width: 100%;
+              padding: 6px 30px 3px 5px;
+              border: 1px solid #282828;
+              border-radius: 5px;
+              outline-color: #000;
+            }
+
+            span {
+              position: absolute;
+              right: 8px;
+              bottom: 2px;
+              cursor: pointer;
+            }
+          }
+
+          button {
+            font-family: "Josefin Sans", sans-serif;
+            font-size: 14px;
+            text-transform: uppercase;
+            color: #fff;
+            width: 150px;
+            height: 30px;
+            padding-top: 5px;
+            background-color: #049cd8;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            margin: 0 auto;
+            cursor: pointer;
+          }
+        }
+      }
+
+      &-signUp {
+        display: flex;
+        flex-direction: column;
+
+        &-cta {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          margin-bottom: 15px;
+
+          &-icon {
+            margin-right: 5px;
+          }
+
+          &-text {
+            p {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 16px;
+              text-transform: uppercase;
+              margin-bottom: 2px;
+            }
+
+            span {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 14px;
+            }
+          }
+        }
+
+        &-form {
+          display: flex;
+          flex-direction: column;
+          background-color: #a421d3;
+          padding: 15px;
+          border: 1px solid #000;
+          border-radius: 5px;
+
+          &-fullName {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+
+            label {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 14px;
+            }
+
+            input {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 14px;
+              height: 30px;
+              width: 100%;
+              padding: 6px 6px 3px 5px;
+              border: 1px solid #282828;
+              border-radius: 5px;
+              outline-color: #000;
+            }
+          }
+
+          &-username {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+
+            label {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 14px;
+            }
+
+            input {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 14px;
+              height: 30px;
+              width: 100%;
+              padding: 6px 6px 3px 5px;
+              border: 1px solid #282828;
+              border-radius: 5px;
+              outline-color: #000;
+            }
+          }
+
+          &-password {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+
+            label {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 14px;
+            }
+
+            input {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 14px;
+              height: 30px;
+              width: 100%;
+              padding: 6px 30px 3px 5px;
+              border: 1px solid #282828;
+              border-radius: 5px;
+              outline-color: #000;
+            }
+
+            span {
+              position: absolute;
+              right: 8px;
+              bottom: 2px;
+              cursor: pointer;
+            }
+          }
+
+          &-birthday {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+
+            label {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 14px;
+            }
+
+            input {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 14px;
+              height: 30px;
+              width: 100%;
+              padding: 6px 6px 3px 5px;
+              border: 1px solid #282828;
+              border-radius: 5px;
+              outline-color: #000;
+            }
+          }
+
+          &-country {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+
+            label {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 14px;
+            }
+
+            input {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 14px;
+              height: 30px;
+              width: 100%;
+              padding: 6px 6px 3px 5px;
+              border: 1px solid #282828;
+              border-radius: 5px;
+              outline-color: #000;
+            }
+          }
+
+          &-state {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+
+            label {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 14px;
+            }
+
+            input {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 14px;
+              height: 30px;
+              width: 100%;
+              padding: 6px 6px 3px 5px;
+              border: 1px solid #282828;
+              border-radius: 5px;
+              outline-color: #000;
+            }
+          }
+
+          button {
+            font-family: "Josefin Sans", sans-serif;
+            font-size: 14px;
+            text-transform: uppercase;
+            color: #fff;
+            width: 150px;
+            height: 30px;
+            padding-top: 5px;
+            background-color: #049cd8;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            margin: 0 auto;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .signInSignUp-desk {
+      display: flex;
+
+      &-signIn {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-right: 20px;
+
+        &-title {
+          margin-bottom: 20px;
+
+          p {
+            font-family: "Josefin Sans", sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-align: center;
+          }
+        }
+
+        &-form {
+          display: flex;
+          flex-direction: column;
+          background-color: #a421d3;
+          padding: 15px;
+          border: 1px solid #000;
+          border-radius: 5px;
+
+          &-label {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+
+            label {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 14px;
+            }
+
+            input {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 14px;
+              height: 30px;
+              width: 100%;
+              padding: 6px 6px 3px 5px;
+              border: 1px solid #282828;
+              border-radius: 5px;
+              outline-color: #000;
+            }
+          }
+
+          &-password {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+
+            label {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 14px;
+            }
+
+            input {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 14px;
+              height: 30px;
+              width: 100%;
+              padding: 6px 30px 3px 5px;
+              border: 1px solid #282828;
+              border-radius: 5px;
+              outline-color: #000;
+            }
+
+            span {
+              position: absolute;
+              right: 8px;
+              bottom: 2px;
+              cursor: pointer;
+            }
+          }
+
+          button {
+            font-family: "Josefin Sans", sans-serif;
+            font-size: 14px;
+            text-transform: uppercase;
+            color: #fff;
+            width: 150px;
+            height: 30px;
+            padding-top: 5px;
+            background-color: #049cd8;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            margin: 0 auto;
+            cursor: pointer;
+          }
+        }
+      }
+
+      &-signUp {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        &-title {
+          margin-bottom: 20px;
+
+          p {
+            font-family: "Josefin Sans", sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-align: center;
+          }
+        }
+
+        &-form {
+          display: flex;
+          flex-direction: column;
+          background-color: #a421d3;
+          padding: 15px;
+          border: 1px solid #000;
+          border-radius: 5px;
+
+          &-fullName {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+
+            label {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 14px;
+            }
+
+            input {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 14px;
+              height: 30px;
+              width: 100%;
+              padding: 6px 6px 3px 5px;
+              border: 1px solid #282828;
+              border-radius: 5px;
+              outline-color: #000;
+            }
+          }
+
+          &-username {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+
+            label {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 14px;
+            }
+
+            input {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 14px;
+              height: 30px;
+              width: 100%;
+              padding: 6px 6px 3px 5px;
+              border: 1px solid #282828;
+              border-radius: 5px;
+              outline-color: #000;
+            }
+          }
+
+          &-password {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+
+            label {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 14px;
+            }
+
+            input {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 14px;
+              height: 30px;
+              width: 100%;
+              padding: 6px 30px 3px 5px;
+              border: 1px solid #282828;
+              border-radius: 5px;
+              outline-color: #000;
+            }
+
+            span {
+              position: absolute;
+              right: 8px;
+              bottom: 2px;
+              cursor: pointer;
+            }
+          }
+
+          &-birthday {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+
+            label {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 14px;
+            }
+
+            input {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 14px;
+              height: 30px;
+              width: 100%;
+              padding: 6px 6px 3px 5px;
+              border: 1px solid #282828;
+              border-radius: 5px;
+              outline-color: #000;
+            }
+          }
+
+          &-country {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+
+            label {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 14px;
+            }
+
+            input {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 14px;
+              height: 30px;
+              width: 100%;
+              padding: 6px 6px 3px 5px;
+              border: 1px solid #282828;
+              border-radius: 5px;
+              outline-color: #000;
+            }
+          }
+
+          &-state {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+
+            label {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 14px;
+            }
+
+            input {
+              font-family: "Josefin Sans", sans-serif;
+              font-size: 14px;
+              height: 30px;
+              width: 100%;
+              padding: 6px 6px 3px 5px;
+              border: 1px solid #282828;
+              border-radius: 5px;
+              outline-color: #000;
+            }
+          }
+
+          button {
+            font-family: "Josefin Sans", sans-serif;
+            font-size: 14px;
+            text-transform: uppercase;
+            color: #fff;
+            width: 150px;
+            height: 30px;
+            padding-top: 5px;
+            background-color: #049cd8;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            margin: 0 auto;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  .messageModal-container {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .messageModal-content {
+      position: absolute;
+      width: calc(100% - 30px);
+      height: auto;
+      background-color: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.6);
+      border-radius: 5px;
+      margin: 15px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+
+      @media screen and (min-width: 1050px) {
+        width: 1024px;
+      }
+
+      .title {
+        margin-bottom: 20px;
+
+        p {
+          font-family: "Josefin Sans", sans-serif;
+          font-size: 20px;
+          font-weight: 700;
+          text-align: center;
+          text-transform: uppercase;
+        }
+      }
+
+      .message {
+        margin-bottom: 15px;
+
+        .contentcategory-container {
+          margin-bottom: 15px;
+          padding: 5px;
+          border: 1px solid #000;
+          border-radius: 5px;
+
+          .topic {
+            font-family: "Josefin Sans", sans-serif;
+            margin-bottom: 5px;
+          }
+
+          .content {
+            font-family: "Josefin Sans", sans-serif;
+            font-weight: 700;
+            word-wrap: break-word;
+          }
+        }
+      }
+
+      .buttons-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .closeButton {
+          font-family: "Josefin Sans", sans-serif;
+          font-size: 14px;
+          text-transform: uppercase;
+          color: #fff;
+          width: 150px;
+          height: 30px;
+          padding-top: 5px;
+          margin: 0;
+          background-color: #049cd8;
+          border: 1px solid #fff;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

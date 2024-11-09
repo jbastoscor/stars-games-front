@@ -1,0 +1,12 @@
+<header>
+  <app-header></app-header>
+</header>
+
+<main>
+  <app-banner-game [valueGameRating]="gameRating"></app-banner-game>
+  <app-avaliacao-game (gameRatingChange)="setGameRating($event)"></app-avaliacao-game>
+</main>
+
+<footer>
+  <app-footer></app-footer>
+</footer>

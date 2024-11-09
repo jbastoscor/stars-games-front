@@ -1,0 +1,170 @@
+<section class="signInSignUp-section">
+  <div class="signInSignUp-container">
+    <div class="signInSignUp-container-title">
+      <h1>Identificação</h1>
+    </div>
+    <div *ngIf="windowWidth < 768" class="signInSignUp-mobile">
+      <div class="signInSignUp-mobile-signIn">
+        <div class="signInSignUp-mobile-signIn-cta" (click)="openSignInForm()">
+          <span class="signInSignUp-mobile-signIn-cta-icon">
+            <span *ngIf="!isSignInOpen" style="color: #a421d3;" class="material-symbols-outlined">circle</span>
+            <span *ngIf="isSignInOpen" style="color: #a421d3;" class="material-symbols-outlined">radio_button_checked</span>
+          </span>
+          <div class="signInSignUp-mobile-signIn-cta-text">
+            <p>Fazer Login</p>
+            <span>Entre com seus dados de login e senha!</span>
+          </div>
+        </div>
+        <div *ngIf="isSignInOpen" class="signInSignUp-mobile-signIn-form">
+          <div class="signInSignUp-mobile-signIn-form-label">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Digite aqui" maxlength="50" [(ngModel)]="signinUsername" />
+          </div>
+          <div class="signInSignUp-mobile-signIn-form-password">
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" placeholder="Digite aqui" minlength="8" maxlength="50" [(ngModel)]="signinPassword" />
+            <span (click)="handleSignInPasswordVisibility()">
+              <span *ngIf="isPasswordVisible" class="material-symbols-outlined">visibility</span>
+              <span *ngIf="!isPasswordVisible" class="material-symbols-outlined">visibility_off</span>
+            </span>
+          </div>
+          <button (click)="validateSignInInputs()">Entrar</button>
+        </div>
+      </div>
+      <div class="signInSignUp-mobile-signUp">
+        <div class="signInSignUp-mobile-signUp-cta" (click)="openSignUpForm()">
+          <span class="signInSignUp-mobile-signUp-cta-icon">
+            <span *ngIf="!isSignUpOpen" style="color: #a421d3;" class="material-symbols-outlined">circle</span>
+            <span *ngIf="isSignUpOpen" style="color: #a421d3;" class="material-symbols-outlined">radio_button_checked</span>
+          </span>
+          <div class="signInSignUp-mobile-signUp-cta-text">
+            <p>Fazer cadastro</p>
+            <span>Ainda não é cadastrado no site?</span>
+          </div>
+        </div>
+        <div *ngIf="isSignUpOpen" class="signInSignUp-mobile-signUp-form">
+          <div class="signInSignUp-mobile-signUp-form-fullName">
+            <label for="fullName">Nome completo:</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Ex: Antonio Jose" maxlength="100" [(ngModel)]="signupFullName" />
+          </div>
+          <div class="signInSignUp-mobile-signUp-form-username">
+            <label for="signUpUsername">Username:</label>
+            <input type="text" id="signUpUsername" name="signUpUsername" placeholder="5 caracteres no mínimo" maxlength="50" [(ngModel)]="signupUsername" />
+          </div>
+          <div class="signInSignUp-mobile-signUp-form-password">
+            <label for="signUpFirstPassword">Senha:</label>
+            <input type="password" id="signUpFirstPassword" name="signUpFirstPassword" placeholder="8 caracteres no mínimo" minlength="8" maxlength="50" [(ngModel)]="signupPassword1" />
+            <span (click)="handleSignUpFirstPasswordVisibility()">
+              <span *ngIf="isPassword1Visible" class="material-symbols-outlined">visibility</span>
+              <span *ngIf="!isPassword1Visible" class="material-symbols-outlined">visibility_off</span>
+            </span>
+          </div>
+          <div class="signInSignUp-mobile-signUp-form-password">
+            <label for="signUpSecondPassword">Repita a senha:</label>
+            <input type="password" id="signUpSecondPassword" name="signUpSecondPassword" placeholder="8 caracteres no mínimo" minlength="8" maxlength="50" [(ngModel)]="signupPassword2" />
+            <span (click)="handleSignUpSecondPasswordVisibility()">
+              <span *ngIf="isPassword2Visible" class="material-symbols-outlined">visibility</span>
+              <span *ngIf="!isPassword2Visible" class="material-symbols-outlined">visibility_off</span>
+            </span>
+          </div>
+          <div class="signInSignUp-mobile-signUp-form-birthday">
+            <label for="birthday">Data de nascimento:</label>
+            <input type="text" id="birthday" name="birthday" placeholder="Ex: 27/07/1999" maxlength="10" [(ngModel)]="signupBirthday" (input)="formatBirthday($event)" />
+          </div>
+          <div class="signInSignUp-mobile-signUp-form-country">
+            <label for="country">País:</label>
+            <input type="text" id="country" name="country" placeholder="Ex: Brasil" maxlength="50" [(ngModel)]="signupCountry" />
+          </div>
+          <div class="signInSignUp-mobile-signUp-form-state">
+            <label for="state">Estado:</label>
+            <input type="text" id="state" name="state" placeholder="Ex: SP" maxlength="2" [(ngModel)]="signupState" />
+          </div>
+          <button (click)="validateSignUpInputs()">Cadastrar</button>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="windowWidth >= 768" class="signInSignUp-desk">
+      <div class="signInSignUp-desk-signIn">
+        <div class="signInSignUp-desk-signIn-title">
+          <p>Já tenho cadastro</p>
+        </div>
+        <div class="signInSignUp-desk-signIn-form">
+          <div class="signInSignUp-desk-signIn-form-label">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Digite aqui" maxlength="50" [(ngModel)]="signinUsername" />
+          </div>
+          <div class="signInSignUp-desk-signIn-form-password">
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" placeholder="Digite aqui" maxlength="50" [(ngModel)]="signinPassword" />
+            <span (click)="handleSignInPasswordVisibility()">
+              <span *ngIf="isPasswordVisible" class="material-symbols-outlined">visibility</span>
+              <span *ngIf="!isPasswordVisible" class="material-symbols-outlined">visibility_off</span>
+            </span>
+          </div>
+          <button (click)="validateSignInInputs()">Entrar</button>
+        </div>
+      </div>
+      <div class="signInSignUp-desk-signUp">
+        <div class="signInSignUp-desk-signUp-title">
+          <p>Quero me cadastrar</p>
+        </div>
+        <div class="signInSignUp-desk-signUp-form">
+          <div class="signInSignUp-desk-signUp-form-fullName">
+            <label for="fullName">Nome completo:</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Ex: Antonio Jose" maxlength="100" [(ngModel)]="signupFullName" />
+          </div>
+          <div class="signInSignUp-desk-signUp-form-username">
+            <label for="signUpUsername">Username:</label>
+            <input type="text" id="signUpUsername" name="signUpUsername" placeholder="5 caracteres no mínimo" maxlength="50" [(ngModel)]="signupUsername" />
+          </div>
+          <div class="signInSignUp-desk-signUp-form-password">
+            <label for="signUpFirstPassword">Senha:</label>
+            <input type="password" id="signUpFirstPassword" name="signUpFirstPassword" placeholder="8 caracteres no mínimo" minlength="8" maxlength="50" [(ngModel)]="signupPassword1" />
+            <span (click)="handleSignUpFirstPasswordVisibility()">
+              <span *ngIf="isPassword1Visible" class="material-symbols-outlined">visibility</span>
+              <span *ngIf="!isPassword1Visible" class="material-symbols-outlined">visibility_off</span>
+            </span>
+          </div>
+          <div class="signInSignUp-desk-signUp-form-password">
+            <label for="signUpSecondPassword">Repita a senha:</label>
+            <input type="password" id="signUpSecondPassword" name="signUpSecondPassword" placeholder="8 caracteres no mínimo" minlength="8" maxlength="50" [(ngModel)]="signupPassword2" />
+            <span (click)="handleSignUpSecondPasswordVisibility()">
+              <span *ngIf="isPassword2Visible" class="material-symbols-outlined">visibility</span>
+              <span *ngIf="!isPassword2Visible" class="material-symbols-outlined">visibility_off</span>
+            </span>
+          </div>
+          <div class="signInSignUp-desk-signUp-form-birthday">
+            <label for="birthday">Data de nascimento:</label>
+            <input type="text" id="birthday" name="birthday" placeholder="Ex: 27/07/1999" maxlength="10" [(ngModel)]="signupBirthday" (input)="formatBirthday($event)" />
+          </div>
+          <div class="signInSignUp-desk-signUp-form-country">
+            <label for="country">País:</label>
+            <input type="text" id="country" name="country" placeholder="Ex: Brasil" maxlength="50" [(ngModel)]="signupCountry" />
+          </div>
+          <div class="signInSignUp-desk-signUp-form-state">
+            <label for="state">Estado:</label>
+            <input type="text" id="state" name="state" placeholder="Ex: SP" maxlength="2" [(ngModel)]="signupState" />
+          </div>
+          <button (click)="validateSignUpInputs()">Cadastrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="isMessageModalOpen" class="messageModal-container">
+    <div class="messageModal-content">
+      <div class="title">
+        <p>Atenção!</p>
+      </div>
+      <div class="message">
+        <div class="contentcategory-container">
+          <p class="topic">Mensagem:</p>
+          <p class="content">{{ modalMessage }}</p>
+        </div>
+      </div>
+      <div class="buttons-container">
+        <button class="closeButton" (click)="isMessageModalOpen = false">Fechar</button>
+      </div>
+    </div>
+  </div>
+  <app-loader *ngIf="isLoaderOpen"></app-loader>
+</section>
