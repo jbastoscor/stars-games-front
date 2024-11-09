@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-adm-cadastro-games',
@@ -18,7 +19,7 @@ export class AdmCadastroGamesComponent implements OnInit {
   modal_open = false;
   is_loader_open = true;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
     this.handleLogin();
@@ -30,7 +31,7 @@ export class AdmCadastroGamesComponent implements OnInit {
     if (user && user.username) {
       this.consultUser(user.username);
     } else {
-      window.location.href = `${window.location.origin}/login`;
+      this.router.navigate(['/login']);
     }
   }
 
@@ -44,10 +45,10 @@ export class AdmCadastroGamesComponent implements OnInit {
       if (response.length === 1 && response[0].is_adm) {
         return;
       } else {
-        window.location.href = `${window.location.origin}/login`;
+        this.router.navigate(['/login']);
       }
     }, () => {
-      window.location.href = `${window.location.origin}/login`;
+      this.router.navigate(['/login']);
     });
   }
 

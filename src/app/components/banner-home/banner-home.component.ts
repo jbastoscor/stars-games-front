@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { gameBkp } from '../../utils/gameBanner';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-banner-home',
@@ -17,14 +18,14 @@ export class BannerHomeComponent implements OnInit {
   game_description: string = '';
   loader_open: boolean = true;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
     this.consultGame();
   }
 
   navigationToGame(): void {
-    window.location.href = `${window.location.origin}/game?id=${this.game_id}`;
+    this.router.navigate(['/game'], { queryParams: { id: this.game_id } });
   }
 
   consultGame(): void {

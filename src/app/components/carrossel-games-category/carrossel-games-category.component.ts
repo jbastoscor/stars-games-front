@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-carrossel-games-category',
@@ -44,14 +45,14 @@ export class CarrosselGamesCategoryComponent implements OnInit {
     ],
   };
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
     this.consultGamesByCategory();
   }
 
   navigationToGame(game: any): void {
-    window.location.href = `${window.location.origin}/game?id=${game._id}`;
+    this.router.navigate(['/game'], { queryParams: { id: game._id } });
   }
 
   consultGamesByCategory(): void {

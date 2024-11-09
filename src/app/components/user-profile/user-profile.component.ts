@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-profile',
@@ -28,7 +29,7 @@ export class UserProfileComponent implements OnInit {
   is_new_password_2_visible = false;
   is_loader_open = false;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
     this.handleLogin();
@@ -42,7 +43,7 @@ export class UserProfileComponent implements OnInit {
       this.consultUser(user.username);
       return true;
     } else {
-      window.location.href = `${window.location.origin}/login`;
+      this.router.navigate(['/login']);
       return false;
     }
   }
@@ -226,7 +227,7 @@ export class UserProfileComponent implements OnInit {
   }
 
   navigateToAdm(): void {
-    window.location.href = `${window.location.origin}/adm`;
+    this.router.navigate(['/adm']);
   }
 
   formatBirthday(event: any) {

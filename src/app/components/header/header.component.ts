@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -16,7 +17,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   is_modal_search_open: boolean = false;
   is_modal_profile_open: boolean = false;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
     this.handleLogin();
@@ -53,19 +54,19 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   navigationToGame(game: any) {
-    window.location.href = `${window.location.origin}/game?id=${game._id}`;
+    this.router.navigate(['/game'], { queryParams: { id: game._id } });
   }
 
   navigateToCategories() {
-    window.location.href = `${window.location.origin}/categories`;
+    this.router.navigate(['/categories']);
   }
 
   navigateToLogin() {
-    window.location.href = `${window.location.origin}/login`;
+    this.router.navigate(['/login']);
   }
 
   navigateToProfile() {
-    window.location.href = `${window.location.origin}/profile`;
+    this.router.navigate(['/profile']);
   }
 
   searchGame(event: any) {

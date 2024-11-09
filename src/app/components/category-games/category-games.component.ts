@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-category-games',
@@ -14,7 +15,7 @@ export class CategoryGamesComponent implements OnInit {
   is_modal_message_open = false;
   is_loader_open = true;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
     this.consultCategory();
@@ -79,6 +80,6 @@ export class CategoryGamesComponent implements OnInit {
   }
 
   navigationToGame(gameId: string): void {
-    window.location.href = `${window.location.origin}/game?id=${gameId}`;
+    this.router.navigate(['/game'], { queryParams: { id: gameId } });
   }
 }

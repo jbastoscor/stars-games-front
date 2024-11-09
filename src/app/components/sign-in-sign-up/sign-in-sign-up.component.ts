@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in-sign-up',
@@ -29,7 +30,7 @@ export class SignInSignUpComponent implements OnInit, OnDestroy {
   isMessageModalOpen: boolean = false;
   isLoaderOpen: boolean = false;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.updateWindowDimensions();
@@ -233,7 +234,7 @@ export class SignInSignUpComponent implements OnInit, OnDestroy {
   }
 
   navigationToHome(): void {
-    window.location.href = `${window.location.origin}/`;
+    this.router.navigate(['/']);
   }
 
   formatBirthday(event: any) {
