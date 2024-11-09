@@ -1,27 +1,48 @@
-# StarsGamesFront
+# Stars Games
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.11.
+### Projeto de Prática Profissional em ADS - Front-end
 
-## Development server
+## Requisitos minímos para executar o projeto
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Projeto back-end também tem que estar rodando localmente.
 
-## Code scaffolding
+- Link: https://github.com/jbastoscor/stars-games-back
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Requisitos
 
-## Build
+- Sistema operacional: Windows 10/11
+- Memoria: 8GB RAM
+- Armazenamento: 2GB de espaço disponível
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+#### Softwares
 
-## Running unit tests
+- Node: 18
+- NPM: 10
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Guia para rodar o projeto localmente
 
-## Running end-to-end tests
+1. Passo - Clonar o respositório:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```sh
+ git clone https://github.com/jbastoscor/stars-games-front.git
+```
 
-## Further help
+2. Passo - Instalar os pacotes:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```sh
+npm install
+```
+
+3. Passo - Iniciar o projeto - Comando:
+
+```sh
+npm run start
+```
+
+##### Pronto, a aplicação estará rodando localmente em seu computador.
+
+Para buildar o projeto:
+
+```sh
+npm run build
+```
