@@ -17,7 +17,7 @@ export class CarrosselGamesRecommendedComponent implements OnInit {
   settings = {
     dots: true,
     infinite: true,
-    mobileFirst: true,
+    mobileFirst: false,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 4,

@@ -107,6 +107,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
   handleLogoff() {
     localStorage.removeItem('user');
     this.is_logged = false;
-    window.location.reload();
+    this.router.navigate(['/']);
   }
 }

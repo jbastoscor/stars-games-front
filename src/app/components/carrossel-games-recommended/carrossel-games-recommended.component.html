@@ -1,7 +1,7 @@
 <div *ngIf="games">
   <section class="carrossel-section">
     <div class="carrossel-container">
-      <h2 class="carrossel-title">Jogos recomendados</h2>
+      <h2 class="carrossel-title">Jogos recomendados para você</h2>
       <ngx-slick-carousel class="carousel" [config]="settings">
         <ng-container *ngFor="let game of games; let index = index">
           <div ngxSlickItem class="carrossel-games" *ngIf="index <= 9">
